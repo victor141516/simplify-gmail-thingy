@@ -1,0 +1,1 @@
+export { getPatched } from './process'
