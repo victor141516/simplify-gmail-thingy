@@ -32,7 +32,7 @@ export async function getPatched() {
 
   console.log('Zipping extension...')
   await rm('extension/original.zip', { force: true })
-  await exec('zip -r _patched.zip extension/*')
+  await exec('zip -r ../_patched.zip *', { cwd: 'extension' })
 
   console.log('Cleaning up...')
   await rm('extension', { recursive: true })
