@@ -8,7 +8,6 @@ export function patch(code: string) {
     if (!e?.declarations?.[0]?.init?.properties) return
 
     e?.declarations?.[0]?.init?.properties?.some((e: any) => {
-      if (e?.params?.[0]?.left?.name !== 'tries') return false
       if (e?.params?.[0]?.right?.value !== 0) return false
 
       return e.body.body.some((e: any) => {
